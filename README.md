@@ -1,4 +1,4 @@
 CS1
 ===
 
-2014 - 15 Various Computer Science 1 Projects (Java)
+Various Computer Science 1 Projects during the 2014 to 15 school year(Java)
