@@ -1,9 +1,8 @@
-
 /**
  * Write a description of class ComplexNumber here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Adithya Sairamachandran) 
+ * @version (11/23/14)
  */
 public class ComplexNumber
 {
@@ -23,7 +22,7 @@ public class ComplexNumber
     public ComplexNumber(double a)
     {
         // initialise instance variables
-        a = real;
+        real = a;
         imag = 0;
     }
 
@@ -33,6 +32,15 @@ public class ComplexNumber
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
+    public double abs(ComplexNumber other)
+    { 
+        double a = this.real * other.real;
+        double b = this.imag * other.imag;
+        double c = Math.pow(a, 2.0);
+        double d = Math.pow(b, 2.0);
+        double x = Math.sqrt(c + d);
+        return x;
+    }
     public ComplexNumber add(ComplexNumber other)
     {
         // put your code here
@@ -40,12 +48,12 @@ public class ComplexNumber
         double b = ((this.imag) + (other.imag));
         return new ComplexNumber(a , b);
     }
-//     public ComplexNumber multiply(ComplexNumber other)
-//     {
-//         double a = ((this.real) * (other.real));
-//         double b = ((this.imag) * (other.imag));
-//         return new ComplexNumber(a, b);
-//     }
+    public ComplexNumber multiply(ComplexNumber other)
+    {
+        double a = ((this.real) * (other.real));
+        double b = ((this.imag) * (other.imag) * (-1));
+        return new ComplexNumber(a, b);
+    }
     public boolean equals(ComplexNumber other)
     {
         if (((this.real) == (other.real)) && ((this.imag) == (other.imag)))
@@ -56,6 +64,14 @@ public class ComplexNumber
     }
     public String toString()
     {
-        return real + " + " + imag +"i";
+         if (imag < 0)
+         {
+             double x = real + imag;
+             return real + " + "  + imag + " = " + x;
+         }
+             else
+         {
+             return real + " + " + imag +"i";
+         }
     }
 }

@@ -15,5 +15,7 @@ public class ComplexTester
        System.out.println(c);
        ComplexNumber d = new ComplexNumber(2,6);
        System.out.println(a.equals(d));
+       System.out.println(a.abs(b));
+       System.out.println(a.multiply(b));
    }
 }
