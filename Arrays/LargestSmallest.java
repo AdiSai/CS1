@@ -9,19 +9,19 @@ public class LargestSmallest
 {
     public static void main(String[] args)
     {
-    int[] data = {3, 1, 5, 7, 4, 12, -3, 8, -2};
-    int maximum = Integer.MAX_VALUE; int minimum = Integer.MIN_VALUE; int smallest = 0; int largest = 0;
+    int[] data = {3, 1, 5, 7, 4, 12, 3, 8, 2};
+    int maximum = data[0]; int minimum = data[0];
     for (int i = 0; i < data.length; i++)
     {
-    if (data[i] > minimum)
+    if (data[i] < minimum)
     {
          minimum = data[i];
     }
-    else if(data[i] < maximum)
+    else if(data[i] > maximum)
     {
           maximum = data[i];
     }
     }
-    System.out.println("The largest element: " + minimum + "\n" + "The smallest element: " + maximum);
+    System.out.println("The largest element: " + maximum + "\n" + "The smallest element: " + minimum);
 }
 }
