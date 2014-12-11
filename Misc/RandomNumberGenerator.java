@@ -37,8 +37,16 @@ public class RandomNumberGenerator
                 System.out.println("At Count: " + count + ", Random Number: " + x);
                 if (x > 0 && x < 101)
                 {
-                    System.out.println("At Count: " + count + ", Random Number: " + x);
-                    break;
+                    if (count > 2)
+                    {
+                        System.out.println("\n" + "At Count: " + count + ", Random Number: " + x);
+                        break;
+                    }
+                    else
+                    {
+                         System.out.println("At Count: " + count + ", Random Number: " + x);
+                         break;
+                    }
                 }
             }
         }
