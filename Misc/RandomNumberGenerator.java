@@ -13,7 +13,11 @@ public class RandomNumberGenerator
         Scanner scan = new Scanner(System.in);
         System.out.println("Max Value: ");
         int MAX_VALUE = (int)scan.nextDouble();
-        if (MAX_VALUE > Integer.MAX_VALUE)
+        if (MAX_VALUE < 100)
+        {
+            MAX_VALUE = 100;
+        }
+        else if (MAX_VALUE > Integer.MAX_VALUE)
         {
             MAX_VALUE = Integer.MAX_VALUE;
         }
