@@ -1,4 +1,10 @@
 
+/**
+ * Write a description of class A here.
+ * 
+ * Adithya Sairamachandran
+ * @version (a version number or a date)
+ */
 public class BankAccount
 {
     private String name;
@@ -31,5 +37,12 @@ public class BankAccount
     public double getBalance()
     {
         return balance;
+    }
+    public String toString()
+    {
+        String n = name;
+        double bal = balance;
+        String r = ("[" + name + ", $" + bal + "]");
+        return r;
     }
 }

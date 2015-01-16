@@ -10,9 +10,10 @@ public class ExtraCredit
     public static void main(String[] args)
     {
         Scanner scan  = new Scanner(System.in);
-        String st = "";
+        String st = ""; String acctName = "";
         double val = 0; double change = 0;
         int choice;
+        BankAccount l = new BankAccount("", 0);
         ArrayList<BankAccount> accts = new ArrayList<BankAccount>();
         System.out.println("Please enter a name to whom the account belongs.");
         st = scan.nextLine();
@@ -23,35 +24,54 @@ public class ExtraCredit
         while (true)
         {
             System.out.println("\n" + "Please choose an option from below:");
+            System.out.println("0: Create a new account");
             System.out.println("1: Deposit");
             System.out.println("2: Withdraw");
             System.out.println("3: Print Max");
-            System.out.println("4: Exit");
+            System.out.println("4: Print All");
+            System.out.println("5: Exit");
             choice = scan.nextInt();
-            if (choice == 1 || choice == 2 || choice == 3 || choice == 4)
+            if (choice == 0 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5)
             {
+                if (choice == 0)
+                {
+                    System.out.println("Please enter a name to whom the account belongs.");
+                    st = scan.next();
+                    System.out.println("Please input the initial value.");
+                    val = scan.nextDouble();
+                    l = new BankAccount(st, val);
+                    accts.add(l);
+                }
                 if (choice == 1)
                 {
+                    System.out.println("Please select a name from the list: " + "\n" + accts);
+                    acctName = scan.next();
                     System.out.println("Please enter the amount of the deposit:");
                     change = scan.nextDouble();
-                    ba.deposit(change);
+                    l.deposit(change);
                 }
                 if (choice == 2)
                 {
+                    System.out.println("Please select a name from the list: " + "\n" + accts);
+                    acctName = scan.next();
                     System.out.println("Please enter the amount of the withdrawl:");
                     change = scan.nextDouble();
-                    ba.withdraw(change);
+                    l.withdraw(change);
                 }
                 if (choice == 3)
                 {
                     printLargest(accts);
-                }  
+                }
                 if (choice == 4)
+                {
+                    System.out.println(accts);
+                }
+                if (choice == 5)
                 {
                     break;
                 }
             } 
-            else if (choice != 1 || choice != 2 || choice != 3 || choice != 4)
+            else if (choice != 0 || choice != 1 || choice != 2 || choice != 3 || choice != 4 || choice != 5)
             {
                 System.out.println(choice + " is not a valid option.");
             }
